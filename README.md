@@ -1,12 +1,11 @@
 # 💻 Portfolio — Benjamin
 
-> Developer's personal portfolio. Green terminal theme. Built with Astro + GitHub Pages.
+> Developer's personal portfolio. Green terminal theme. Built with Astro + Vercel.
 
-[![Deploy](https://github.com/Ic3drago/Ic3drago.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/Ic3drago/Ic3drago.github.io/actions/workflows/deploy.yml)
 [![Astro](https://img.shields.io/badge/Astro-4.x-orange?logo=astro)](https://astro.build)
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-deployed-brightgreen)](https://Ic3drago.github.io/)
+[![Vercel](https://img.shields.io/badge/Vercel-deployed-black)](https://ic3drago-github-io.vercel.app/)
 
-**🌐 Live demo:** [https://Ic3drago.github.io](https://Ic3drago.github.io/)
+**🌐 Live demo:** [https://ic3drago-github-io.vercel.app](https://ic3drago-github-io.vercel.app/)
 
 ---
 
@@ -15,8 +14,8 @@
 - **Green Terminal Theme** — Hacker/retro aesthetic with monospaced fonts and scanline effects.
 - **Clean Architecture** — Centralized data via `src/data/site.ts` (a single config file to edit everything).
 - **5 Core Pages** — Home, Projects, About, Writing, Contact.
-- **Auto-deploy** — GitHub Actions automatically deploys on every push to the `main` branch.
-- **100% Static** — No backend, no database, zero hosting costs.
+- **Auto-deploy** — Vercel automatically deploys on every push to the `main` branch.
+- **100% Static** — Fast, secure, zero-database architecture.
 - **Mobile Responsive** — Fully optimized for mobile screens.
 
 ---
@@ -42,16 +41,13 @@ portfolio/
 │       └── global.css
 ├── public/
 │   └── avatar.jpg           ← Profile picture (replace it)
-├── .github/
-│   └── workflows/
-│       └── deploy.yml       ← GitHub Pages CI/CD
 ├── astro.config.mjs
 └── package.json
 ```
 
 ---
 
-## 🚀 Deployment on GitHub Pages (Step-by-Step)
+## 🚀 Deployment on Vercel (Step-by-Step)
 
 ### 1. Clone and Setup
 
@@ -83,8 +79,8 @@ You can also update your projects and posts array in the same file.
 
 ```js
 export default defineConfig({
-  site: "https://Ic3drago.github.io",
-  base: "/", // ← root path for User Pages
+  site: "https://ic3drago-github-io.vercel.app",
+  base: "/", // ← root path
 });
 ```
 
@@ -103,12 +99,14 @@ git remote add origin https://github.com/Ic3drago/Ic3drago.github.io.git
 git push -u origin main
 ```
 
-### 6. Enable GitHub Pages
+### 6. Deploy to Vercel
 
-1. Go to your repository → **Settings** → **Pages**
-2. Under **Source**, select **GitHub Actions**
-3. Wait ~2 minutes and your site will be live at:
-   `https://Ic3drago.github.io/`
+1. Log in to [Vercel](https://vercel.com).
+2. Click **Add New** → **Project**.
+3. Import your GitHub repository (`Ic3drago.github.io`).
+4. Vercel will automatically detect Astro. Click **Deploy**.
+5. Wait ~1 minute and your site will be live at:
+   `https://ic3drago-github-io.vercel.app`
 
 ---
 
@@ -129,8 +127,7 @@ npm run preview  # Preview production build locally
 | [Astro](https://astro.build) | Static web framework      |
 | TypeScript                   | Static typing             |
 | CSS Variables                | Terminal theme styling    |
-| GitHub Actions               | Automated CI/CD pipeline  |
-| GitHub Pages                 | Free hosting              |
+| Vercel                       | CI/CD & Global CDN Hosting|
 
 ---
 
