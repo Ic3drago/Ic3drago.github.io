@@ -1,0 +1,55 @@
+---
+// src/pages/index.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { siteConfig, projects } from '../data/site';
+
+const featuredProjects = projects.slice(0, 2);
+---
+
+<BaseLayout title="Home">
+  <section class="section">
+    <div class="section-comment">// Introduction</div>
+    <h2 class="section-title">HEY THERE!</h2>
+    <p class="section-text">{siteConfig.bio}</p>
+  </section>
+
+  <section class="section">
+    <div class="section-comment">// Featured Projects</div>
+    <h2 class="section-title">SOME OF THE WORK I'VE DONE</h2>
+    {featuredProjects.map(p => <ProjectCard {...p} />)}
+    <a href="/portfolio/projects" class="more-link">→ View all projects</a>
+  </section>
+</BaseLayout>
+
+<style>
+  .section {
+    margin-bottom: 3.5rem;
+  }
+  .section-comment {
+    color: var(--green-comment);
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--green);
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.05em;
+  }
+  .section-text {
+    color: var(--green);
+    opacity: 0.85;
+    max-width: 750px;
+    font-size: 0.95rem;
+  }
+  .more-link {
+    display: inline-block;
+    margin-top: 0.8rem;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    text-decoration: none;
+  }
+  .more-link:hover { color: var(--green); }
+</style>

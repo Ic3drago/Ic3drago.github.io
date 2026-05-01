@@ -1,0 +1,86 @@
+---
+// src/pages/about.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/site';
+---
+
+<BaseLayout title="About">
+  <div class="page-title-block">
+    <h2 class="page-title">ABOUT</h2>
+  </div>
+
+  <section class="section">
+    <div class="section-comment">// Biography</div>
+    <h3 class="section-title">{siteConfig.tagline}</h3>
+    <p class="bio-text">{siteConfig.bio}</p>
+    <p class="bio-text">{siteConfig.bio2}</p>
+  </section>
+
+  <section class="section">
+    <div class="section-comment">// Stack</div>
+    <h3 class="section-title">TECHNOLOGIES I USE</h3>
+    <div class="stack-grid">
+      {[
+        { cat: 'Languages', items: ['Python', 'JavaScript', 'TypeScript', 'HTML/CSS'] },
+        { cat: 'ML/Data', items: ['Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib', 'Streamlit'] },
+        { cat: 'Web', items: ['Astro', 'Node.js', 'REST APIs'] },
+        { cat: 'Tools', items: ['Git', 'GitHub', 'VS Code', 'Jupyter'] },
+      ].map(({ cat, items }) => (
+        <div class="stack-block">
+          <div class="stack-cat">// {cat}</div>
+          <ul class="stack-list">
+            {items.map(i => <li>{i}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-title-block { margin-bottom: 2.5rem; }
+  .page-title {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    color: var(--green);
+  }
+  .section { margin-bottom: 3rem; }
+  .section-comment { color: var(--green-comment); font-size: 0.85rem; margin-bottom: 0.3rem; }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--green);
+    margin-bottom: 1rem;
+  }
+  .bio-text {
+    color: var(--green);
+    opacity: 0.85;
+    max-width: 750px;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  .stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  .stack-cat {
+    color: var(--green-comment);
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+  .stack-list {
+    list-style: none;
+    padding: 0;
+  }
+  .stack-list li {
+    color: var(--green);
+    font-size: 0.9rem;
+    padding: 0.15rem 0;
+    opacity: 0.85;
+  }
+  .stack-list li::before {
+    content: '> ';
+    color: var(--green-comment);
+  }
+</style>

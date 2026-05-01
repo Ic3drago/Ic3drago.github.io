@@ -1,0 +1,73 @@
+/* src/styles/global.css */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap');
+
+:root {
+  --green: #00ff41;
+  --green-dim: #00cc33;
+  --green-muted: #005510;
+  --green-comment: #2d7a3a;
+  --bg: #0a0f0a;
+  --bg-card: #0d150d;
+  --bg-nav: #0b130b;
+  --text: #00ff41;
+  --text-dim: #339933;
+  --border: #1a3a1a;
+  --border-bright: #00aa22;
+  --font-mono: 'Share Tech Mono', 'Courier New', monospace;
+  --font-display: 'VT323', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: none;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* Scanline effect overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.08) 2px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+a {
+  color: var(--green);
+  text-decoration: underline;
+  text-decoration-color: var(--green-muted);
+  transition: text-decoration-color 0.2s;
+}
+a:hover { text-decoration-color: var(--green); }
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+}
+
+::selection {
+  background: var(--green);
+  color: var(--bg);
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--green-muted); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--green-dim); }
