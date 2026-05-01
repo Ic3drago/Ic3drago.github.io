@@ -9,7 +9,7 @@ const { title = siteConfig.name, description = siteConfig.tagline } = Astro.prop
 const currentPath = Astro.url.pathname;
 
 function isActive(href: string) {
-  if (href === '/') return currentPath === '/' || currentPath === '/portfolio/' || currentPath === '/portfolio';
+  if (href === '/') return currentPath === '/';
   return currentPath.includes(href.replace('/', ''));
 }
 ---
@@ -30,7 +30,7 @@ function isActive(href: string) {
     <div class="header-inner">
       <div class="header-identity">
         <div class="avatar-wrap">
-          <img src="/portfolio/avatar.jpg" alt={siteConfig.name} class="avatar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <img src="/avatar.jpg" alt={siteConfig.name} class="avatar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
           <div class="avatar-fallback">&gt;_</div>
         </div>
         <div class="header-info">
@@ -57,7 +57,7 @@ function isActive(href: string) {
     <div class="nav-inner">
       {siteConfig.nav.map(item => (
         <a
-          href={`/portfolio${item.href === '/' ? '' : item.href}`}
+          href={item.href}
           class:list={['nav-link', { active: isActive(item.href) }]}
         >
           {item.label}

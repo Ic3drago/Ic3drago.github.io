@@ -2,11 +2,11 @@
 
 > Developer's personal portfolio. Green terminal theme. Built with Astro + GitHub Pages.
 
-[![Deploy](https://github.com/Ic3drago/portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/Ic3drago/portfolio/actions/workflows/deploy.yml)
+[![Deploy](https://github.com/Ic3drago/Ic3drago.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/Ic3drago/Ic3drago.github.io/actions/workflows/deploy.yml)
 [![Astro](https://img.shields.io/badge/Astro-4.x-orange?logo=astro)](https://astro.build)
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-deployed-brightgreen)](https://Ic3drago.github.io/portfolio)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-deployed-brightgreen)](https://Ic3drago.github.io/)
 
-**🌐 Live demo:** [https://Ic3drago.github.io/portfolio](https://Ic3drago.github.io/portfolio)
+**🌐 Live demo:** [https://Ic3drago.github.io](https://Ic3drago.github.io/)
 
 ---
 
@@ -56,8 +56,8 @@ portfolio/
 ### 1. Clone and Setup
 
 ```bash
-git clone https://github.com/Ic3drago/portfolio.git
-cd portfolio
+git clone https://github.com/Ic3drago/Ic3drago.github.io.git
+cd Ic3drago.github.io
 npm install
 ```
 
@@ -84,7 +84,7 @@ You can also update your projects and posts array in the same file.
 ```js
 export default defineConfig({
   site: "https://Ic3drago.github.io",
-  base: "/portfolio", // ← your repo name
+  base: "/", // ← root path for User Pages
 });
 ```
 
@@ -99,7 +99,7 @@ git init
 git add .
 git commit -m "feat: init portfolio system"
 git branch -M main
-git remote add origin https://github.com/Ic3drago/portfolio.git
+git remote add origin https://github.com/Ic3drago/Ic3drago.github.io.git
 git push -u origin main
 ```
 
@@ -108,14 +108,14 @@ git push -u origin main
 1. Go to your repository → **Settings** → **Pages**
 2. Under **Source**, select **GitHub Actions**
 3. Wait ~2 minutes and your site will be live at:
-   `https://Ic3drago.github.io/portfolio`
+   `https://Ic3drago.github.io/`
 
 ---
 
 ## 💻 Local Development
 
 ```bash
-npm run dev      # Spin up local server at http://localhost:4321/portfolio
+npm run dev      # Spin up local server at http://localhost:4321
 npm run build    # Compile production build
 npm run preview  # Preview production build locally
 ```
